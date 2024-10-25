@@ -9,6 +9,7 @@ body {
     font-family: 'futura_ltbook', sans-serif;
     color: #484848;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     text-transform: uppercase;
@@ -348,198 +349,295 @@ nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:fo
 .service_item .btn.know_btn {
     margin: 20px 0 100px;
 }
+/* General Section Styling */
+#process {
+    padding: 60px 20px;
+}
+
+#process .head_title {
+    margin-bottom: 40px;
+}
+
+#process h2 {
+    font-size: 2.5em;
+    color: #0398fc;
+    font-weight: bold;
+}
+
+#process h3 {
+    font-size: 1.4em;
+    color: #777;
+    margin-top: 10px;
+}
+
+#process p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Process Steps Styling */
+.process_step {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process_step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.process_step h4 {
+    font-size: 1.2em;
+    color: #0398fc;
+    margin-bottom: 10px;
+}
+
+.process_step p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    #process .head_title h2 {
+        font-size: 2em;
+    }
+    
+    .process_step {
+        padding: 15px;
+    }
+}
+
 
 /* Portfolio */
 #portfolio {
     background: rgba(0, 0, 0, 0) url("../images/portfolio_bg.jpg") no-repeat scroll 0 0;
-    background-size:cover;
-    position:relative;
+    background-size: cover;
+    position: relative;
     padding-bottom: 102px;
-    border-bottom:2px solid #199ce7;
+    border-bottom: 2px solid #199ce7;
 }
-#portfolio::before{
-    position:absolute;
-    content:"";
-    height:100%;
-    width:100%;
+
+#portfolio::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
     background: #199ce7;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
 }
-.portfolio_area{ position:relative;color:#fff;}
+
+.portfolio_area {
+    position: relative;
+    color: #fff;
+}
+
 .portfolio_area h2 {
     color: #fff;
     margin: 65px 0 34px;
 }
-/* Portfolio filters */
-#filters {
-    margin: 52px 0 38px;
+
+/* Portfolio container */
+.portfolio-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Default to row for larger screens */
 }
-#filters > button {
-    background: transparent none repeat scroll 0 0;
-    border: 1px solid transparent;
-    border-radius: 18px;
-    outline: 0 none;
-    padding: 6px 17px 4px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+
+/* Showcase video styling */
+.grid {
+    margin: 0 -6px;
+    flex: 0 0 50%; /* Showcase takes up 50% width */
+    position: relative; /* Add relative positioning */
+    z-index: 2; /* Bring video above images */
 }
-#filters > button:hover {
-    border: 1px solid #093d5c;
-    color: #093d5c;
-}
-#filters > button.is-checked {
-    background: #093d5c;
-}
-#filters > button.is-checked:hover {
-    color: #fff;
-}
-.grid{margin: 0 -6px;}
-.grid-item{border:6px solid transparent;}
-.grid-item, .grid-sizer {width: 25%;}
+
 .grid-item {
-    float: left;
+    border: 6px solid transparent;
     height: 255px !important; 
-}
-.grid-item{
     overflow: hidden;
 }
-.grid-item--width2 { width: 50%;}
-.grid-item--height2 { height: 510px !important;}
-.grid-item:hover img{
-    transform: scale(1.1);
+
+.grid-item--width2 { 
+    width: 100%; 
 }
-.grid-item img{
+
+.grid-item--height2 { 
+    height: 510px !important; 
+}
+
+.grid-item video,
+.grid-item img {
     height: 100%;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    -ms-transition: all 0.6s;
+    width: 100%; /* Ensure video and images take full width */
+    object-fit: cover; /* Maintain aspect ratio while filling */
     transition: all 0.6s;
 }
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
 /* Portfolio Hover */
 .portfolio_hover_area {
-    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0.6);
     height: 100%;
     width: 100%;
     top: 0;
     position: absolute;
     text-align: center;
-    opacity:0;
-}
-.grid-item:hover .portfolio_hover_area {opacity: 1;}
-.portfolio_hover_area .fa {
-    background: #199ce7 none repeat scroll 0 0;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    color: #fff;
-    font-size: 30px;
-    margin-top: 215px;
-    padding: 15px;
-    border:1px solid transparent;
-}
-.grid-item .portfolio_hover_area .fa {
-    margin-top: 90px;
-}
-.grid-item--width2 .portfolio_hover_area .fa {
-    margin-top: 217px;
-}
-.portfolio_hover_area > a:first-child{  margin-right: 10px;}
-.portfolio_hover_area .fa:hover{
-    border:1px solid #199ce7;
-    background:transparent;
-    color:#199ce7;
+    opacity: 0;
+    z-index: 1; /* Make sure hover area is below video */
 }
 
-/* Testimonial */
-#testimonial {
-    background: url("../images/testimonial_bg.jpg") no-repeat scroll 0 0;
-    background-size:cover;
-    position:relative;
+.grid-item:hover .portfolio_hover_area {
+    opacity: 1;
 }
-#testimonial::before {
-    background: #fff;
-    opacity:0.7;
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-}
-.testimonial_area{ position:relative;}
-#testimonial h2 {
-    margin-top: 63px;
-}
-.testimonial_item {
-    padding: 0 15px;
-}
-.testimonial_content {
-    background: #3ca0da none repeat scroll 0 0;
-    border-radius: 18px;
-    margin: 55px 0 30px;
-    padding: 40px 15px 40px 70px;
-    text-align: left;
-    position:relative;
-    color:#ffffff;
-}
-.testimonial_content::after {
-    background: inherit;
-    bottom: -10px;
-    content: "";
-    height: 20px;
-    left: 47%;
-    position: absolute;
-    transform: rotate(45deg);
-    width: 20px;
-}
-.testimonial_content p {
-    position:relative;
-}
-.testimonial_content p:first-child::before {
-    color: #fdfbfb;
-    content: ",,";
-    font-family: "GillSansMT-UltraBold";
-    font-size: 60px;
-    left: -54px;
-    position: absolute;
-    top: -24px;
-    transform: rotateY(180deg);
-}
-#testimonial .col-sm-4:nth-child(3n+2) .testimonial_content {
-    margin: 40px 0;
-    padding-bottom: 70px;
-}
-.testimonial_item:hover .testimonial_content {
-    background: #199ce7 none repeat scroll 0 0;
-}
-.testimonial_item:hover .testimonial_content::after {
-    width: 22px;
-    height: 22px;
-    bottom:-11px;
-}
-.testimonial_item:hover .testimonial_content {
+
+.portfolio_hover_area .fa {
+    background: #199ce7;
+    border: 2px solid transparent;
+    border-radius: 5px;
     color: #fff;
+    font-size: 30px;
+    padding: 15px;
+    border: 1px solid transparent;
 }
-.testimonial_item:hover .testimonial_content p:first-child::before {
-    color: inherit;
+
+/* Images container */
+.images-container {
+    flex: 0 0 50%; /* Images container takes 50% width */
+    padding-left: 20px; /* Space between showcase and images */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    position: relative; /* Ensure stacking context */
 }
-.testimonial_item > img {
-    border-radius: 100%;
-    height: 80px;
-    width: 80px;
+
+/* Ensure images take 2 columns and 2 rows */
+.images-container .grid {
+    display: flex; /* Use flexbox for grid items */
+    flex-wrap: wrap; /* Wrap items */
+    width: 100%; /* Full width */
+    z-index: 1; /* Keep images below the showcase */
 }
-.worker_name {
-    font-family: "futura_ltbold",sans-serif;
-    margin: 10px 0 45px;
-    text-transform: uppercase;
+
+.images-container .grid-item {
+    flex: 0 0 calc(50% - 10px); /* Each item takes up 50% of the container width, minus gap */
+    height: 220px; /* Adjust height for grid items */
+    margin: 5px; /* Add some margin for spacing */
+}
+
+/* Adjust width for wider images */
+.images-container .grid-item img {
+    width: 100%; /* Set to 100% to fit the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 991px) {
+    .images-container .grid-item {
+        flex: 0 0 calc(50% - 10px); /* Maintain 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Portfolio container */
+    .portfolio-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    /* Showcase video styling */
+    .grid {
+        flex: 0 0 100%; /* Make the video take full width */
+        margin-bottom: 20px; /* Add space below the video */
+        z-index: 2; /* Ensure it's above the images */
+    }
+
+    #portfolio {
+        padding-bottom: 20px; /* Add some padding to the bottom */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    /* Adjust images container */
+    .images-container {
+        margin-top: 70vh;
+        flex: 0 0 100%; /* Make the images container take full width */
+        padding-left: 0; /* Remove left padding */
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack images vertically */
+        gap: 10px; /* Add some space between images */
+        z-index: 1; /* Keep below the video */
+    }
+
+    /* Images inside the images container */
+    .images-container .grid-item {
+        flex: 0 0 100%; /* Make each image take full width */
+        height: auto; /* Allow images to adjust height based on aspect ratio */
+    }
+}
+
+.navigation {
+    margin-top: 20px;
+    display: flex; /* Align buttons horizontally */
+    justify-content: center; /* Center buttons */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Portfolio Hover */
+.portfolio_hover_area {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    position: absolute; /* Positioning relative to the grid item */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition */
+}
+
+.grid-item:hover .portfolio_hover_area {
+    opacity: 1; /* Show on hover */
+}
+
+/* Icon styling */
+.portfolio_hover_area .fa {
+    background: #199ce7; /* Background color for the icon */
+    border-radius: 50%; /* Circular background */
+    color: #fff; /* Icon color */
+    font-size: 30px; /* Icon size */
+    padding: 15px; /* Padding around the icon */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.portfolio_hover_area .fa:hover {
+    background: transparent; /* Change background on hover */
+    color: #199ce7; /* Change icon color on hover */
+    border: 1px solid #199ce7; /* Border on hover */
 }
 
 /* Contact form */
 #contact_form {
+    position: relative;
     background: #42abe7 none repeat scroll 0 0;
     padding:27px 0 32px;
 }
@@ -766,16 +864,6 @@ footer::after {
         display:block;
         margin:0 auto;
     }
-    .grid-item {
-        height: 220px !important;
-    }
-    .grid-item--height2 { height: 440px !important;}
-    .grid-item .portfolio_hover_area .fa {
-        margin-top: 73px;
-    }
-    .grid-item--width2 .portfolio_hover_area .fa {
-        margin-top: 183px;
-    }
     #contact_form .second_heading {
         font-size: 30px;
     }
@@ -814,17 +902,6 @@ footer::after {
     }
     .container.about_bg {
         background-position: bottom 100px center;
-    }
-    .grid-item {
-        height: 255px !important;
-        width:50%;
-    }
-    .grid-item--height2 { height: 500px !important; width:100%;}
-    .grid-item .portfolio_hover_area .fa {
-        margin-top: 90px;
-    }
-    .grid-item--width2 .portfolio_hover_area .fa {
-        margin-top: 217px;
     }
     #contact_form {
         text-align: center;
@@ -968,19 +1045,7 @@ footer::after {
     .about_banner > img {
         width: 100%;
     }
-    #filters > button {
-        font-size: 14px;
-    }
-    .grid-item {
-        width:100%;
-    }
-    .grid-item--height2 { height: 255px !important;}
-    .grid-item--width2 .portfolio_hover_area .fa {
-        margin-top: 90px;
-    }
     .list-inline.footer_social_icon > li {
         padding: 8px 3px;
     }
-
-
 }
